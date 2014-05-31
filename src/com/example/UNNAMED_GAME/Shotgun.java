@@ -7,7 +7,9 @@ public interface Shotgun {
 
 }
 
-public class Shotgun {
+public class Shotgun implements Weapon {
 
-    public Shotgun(double damagePerShot, double projectileTravelSpeed)
+    public Shotgun() {
+        Weapon SG = new Weapon(8, 50, 0, 10);
+    }
 }

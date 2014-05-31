@@ -7,9 +7,9 @@ public interface LightningGun {
 
 }
 
-public class LightningGun {
+public class LightningGun implements Weapon {
 
-    public LightningGun(double damagePerShot, double projectileTravelSpeed) {
-
+    public LightningGun() {
+        Weapon LG = new Weapon(10, 1, 0, 10);
     }
 }

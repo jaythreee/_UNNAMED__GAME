@@ -9,7 +9,7 @@ public interface Railgun {
 
 public class Railgun implements Weapon {
 
-    public Railgun(double damagePerShot, double projectileTravelSpeed) {
-
+    public Railgun() {
+        Weapon Rail = new Weapon(100, 100, 0, 10);
     }
 }

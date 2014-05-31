@@ -7,9 +7,9 @@ public interface RocketLauncher {
 
 }
 
-public class RocketLauncher {
+public class RocketLauncher implements Weapon {
 
-    public RocketLauncher(double damagePerShot, double projectileTravelSpeed) {
-
+    public RocketLauncher() {
+        Weapon RL = new Weapon(100, 100, 100, 10);
     }
 }

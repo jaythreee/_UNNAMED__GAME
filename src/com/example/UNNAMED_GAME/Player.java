@@ -15,6 +15,7 @@ public class Player {
     public int healthPoints;
     public int armorPoints;
     public enum[] availableWeapons;
+    public int respawnTimer;
 
     public void onSpawn() {
         healthPoints = 100;

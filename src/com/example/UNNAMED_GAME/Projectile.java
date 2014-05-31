@@ -5,7 +5,21 @@ package com.example.UNNAMED_GAME;
  */
 public class Projectile {
 
-    public Projectile(double travelSpeed, double[] endPoint) {
+    public Projectile(enum weaponProjectileType) {
+        switch(weaponProjectileType) {
+            case SHOTGUN:
+                break;
+            case ROCKETLAUNCHER:
+                break;
 
+            case RAILGUN:
+                break;
+
+            case LIGHTNINGGUN:
+                break;
+
+            default:
+                // throw an error
+        }
     }
 }
