@@ -16,7 +16,10 @@ public class Map
     }
     public void SetObjPos(int centerX, int centerY, GridObjects obj)
     {
-        int xStart, yStart, xEnd, yEnd;
+        int xStart = 0;
+        int yStart = 0;
+        int xEnd = 0;
+        int yEnd = 0;
 
         switch (obj)
         {
@@ -53,6 +56,9 @@ public class Map
                 xEnd = centerX + POWERUP_SIZE_X / 2 - 1;
                 yEnd = centerY + POWERUP_SIZE_Y / 2 - 1;
                 break;
+
+            default:
+                break;
         }
 
         /* Make sure we're still inside map */
@@ -63,21 +69,45 @@ public class Map
         if (xEnd > MAP_MAX_X)
             xEnd = MAP_MAX_X;
         if (yEnd > MAP_MAX_Y)
-            yEnd = MAP_MAX_Y
-                    ;
+            yEnd = MAP_MAX_Y;
+
         for (int x = xStart; x <= xEnd; x++)
-            grid[x][y] = obj;
+        {
+            for (int y = yStart; y <= yEnd; y++)
+                grid[x][y] = (byte)obj.ordinal();
+        }
     }
 
-    public boolean CanMoveTo(int x, int y)
+    public boolean PointAvailable(int x, int y)
     {
-
+        return grid[x][y] == (byte)GridObjects.EMPTY.ordinal();
     }
 
+    public boolean AreaAvailable(int x, int y)
+    {
+        return false;
+    }
 
+    public boolean MoveTo(int x, int y)
+    {
+        return false;
+    }
 
-    private static final int MAP_MAX_Y = 2048;
+    public GridObjects WhatsAt(int x, int y)
+    {
+        return GridObjects.values()[grid[x][y]];
+    }
+
     private static final int MAP_MAX_X = 2048;
+    private static final int MAP_MAX_Y = 2048;
+    private static final int WEAPON_SIZE_X = 16;
+    private static final int WEAPON_SIZE_Y = 16;
+    private static final int PLAYER_SIZE_X = 16;
+    private static final int PLAYER_SIZE_Y = 16;
+    private static final int ITEM_SIZE_X = 16;
+    private static final int ITEM_SIZE_Y = 16;
+    private static final int POWERUP_SIZE_X = 16;
+    private static final int POWERUP_SIZE_Y = 16;
 
-    private short[][] grid = new short[MAP_MAX_X][MAP_MAX_Y];
+    private byte[][] grid = new byte[MAP_MAX_X][MAP_MAX_Y];
 }
