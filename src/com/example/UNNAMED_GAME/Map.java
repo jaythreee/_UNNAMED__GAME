@@ -98,6 +98,17 @@ public class Map
         return GridObjects.values()[grid[x][y]];
     }
 
+    public boolean CreateArena1(byte[][] newMap)
+    {
+        if (newMap.length != grid.length)
+            return false;
+
+        for (int i = 0; i < grid.length; i++)
+          grid[i] = newMap[i].clone();
+
+        return true;
+    }
+
     private static final int MAP_MAX_X = 2048;
     private static final int MAP_MAX_Y = 2048;
     private static final int WEAPON_SIZE_X = 16;
@@ -110,4 +121,6 @@ public class Map
     private static final int POWERUP_SIZE_Y = 16;
 
     private byte[][] grid = new byte[MAP_MAX_X][MAP_MAX_Y];
+
+    public byte[][] arena1 = new byte[MAP_MAX_X][MAP_MAX_Y];
 }
