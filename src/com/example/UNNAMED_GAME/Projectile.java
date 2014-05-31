@@ -5,7 +5,7 @@ package com.example.UNNAMED_GAME;
  */
 public class Projectile {
 
-    public void onCreate() {
+    public Projectile(double travelSpeed, double[] endPoint) {
 
     }
 }

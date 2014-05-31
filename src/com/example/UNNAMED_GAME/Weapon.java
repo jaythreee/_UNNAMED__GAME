@@ -17,4 +17,9 @@ public class Weapon {
     public void onFire() {
         Projectile proj = new Projectile();
     }
+
+    public void onSpawn() {
+        // need a way to communicate to Map/Environment class
+        // that some set of points on map are occupied by weapon
+    }
 }
