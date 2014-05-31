@@ -3,14 +3,14 @@ package com.example.UNNAMED_GAME;
 /**
  * Created by drew on 5/31/2014.
  */
-public interface Railgun {
-    void onCreate();
+public class Railgun extends Weapon {
 
-}
+    public Railgun() {
+        Weapon Rail = new Weapon(100, 100, 0, 10, 1);
+    }
 
-public class Railgun implements Weapon {
-
-    public Railgun(double damagePerShot, double projectileTravelSpeed) {
-
+    @Override
+    public void onFire() {
+        onFire(RAILGUN);
     }
 }
