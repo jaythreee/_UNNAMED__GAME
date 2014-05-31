@@ -10,6 +10,11 @@ public interface RocketLauncher {
 public class RocketLauncher implements Weapon {
 
     public RocketLauncher() {
-        Weapon RL = new Weapon(100, 100, 100, 10);
+        Weapon RL = new Weapon(100, 100, 100, 10, 1);
+    }
+
+    @Override
+    public void onFire() {
+        onFire(ROCKETLAUNCHER);
     }
 }

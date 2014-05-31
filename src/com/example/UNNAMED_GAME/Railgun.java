@@ -10,6 +10,11 @@ public interface Railgun {
 public class Railgun implements Weapon {
 
     public Railgun() {
-        Weapon Rail = new Weapon(100, 100, 0, 10);
+        Weapon Rail = new Weapon(100, 100, 0, 10, 1);
+    }
+
+    @Override
+    public void onFire() {
+        onFire(RAILGUN);
     }
 }

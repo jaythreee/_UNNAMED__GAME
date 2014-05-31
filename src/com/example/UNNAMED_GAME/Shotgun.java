@@ -10,6 +10,11 @@ public interface Shotgun {
 public class Shotgun implements Weapon {
 
     public Shotgun() {
-        Weapon SG = new Weapon(8, 50, 0, 10);
+        Weapon SG = new Weapon(8, 50, 0, 10, 1);
+    }
+
+    @Override
+    public void onFire() {
+        onFire(SHOTGUN);
     }
 }

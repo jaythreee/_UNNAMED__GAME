@@ -10,6 +10,11 @@ public interface LightningGun {
 public class LightningGun implements Weapon {
 
     public LightningGun() {
-        Weapon LG = new Weapon(10, 1, 0, 10);
+        Weapon LG = new Weapon(10, 1, 0, 10, 1);
+    }
+
+    @Override
+    public void onFire() {
+        onFire(LIGHTNINGGUN);
     }
 }

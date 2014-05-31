@@ -7,6 +7,9 @@ public interface Player {
     public void onSpawn();
     public void onDeath();
 
+    public double[] getPosition();
+    public double[] getVelocity();
+    public double[] getAcceleration();
 }
 
 public class Player {
@@ -17,9 +20,32 @@ public class Player {
     public enum[] availableWeapons;
     public int respawnTimer;
 
-    public void onSpawn() {
+    // These should all be 2d arrays
+    public double[] position;
+    public double[] velocity;
+    public double[] acceleration;
+
+    public Player() {
         healthPoints = 100;
         armorPoints = 0;
         availableWeapons.push(new Shotgun);
+        respawnTimer = 0;
+
+        // Need to implement spawn point logic
+        position = [0, 0];
+        velocity = [0, 0];
+        acceleration = [0, 0];
+    }
+
+    public double[] getPosition() {
+        return position;
+    }
+
+    public double[] getVelocity() {
+        return velocity;
+    }
+
+    public double[] getAcceleration() {
+        return acceleration;
     }
 }
