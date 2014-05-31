@@ -8,11 +8,20 @@ public interface Projectile {
     public double[] getCurrentCoordinates();
 }
 
-public class Projectile {
+public class sub implements Projectile {
 
     private double[] coordinates;
+    private double projectileTravelSpeed;
 
-    public Projectile(enum weaponProjectileType) {
+    public Projectile(double[] launchCoordinates, double projTravelSpd, enum weaponProjectileType) {
+
+        projectileTravelSpeed = projTravelSpd;
+
+        for (int i = 0; i < 3; i++) {
+            coordinates[i] = launchCoordinates[i];
+        }
+
+
         switch(weaponProjectileType) {
             case SHOTGUN:
                 break;

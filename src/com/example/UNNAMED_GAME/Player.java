@@ -12,7 +12,7 @@ public interface Player {
     public double[] getAcceleration();
 }
 
-public class Player {
+public class sub implements Player {
 
     // Properties held by all players
     public int healthPoints;

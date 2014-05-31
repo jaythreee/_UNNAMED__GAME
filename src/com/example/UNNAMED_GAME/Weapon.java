@@ -9,18 +9,16 @@ public interface Weapon {
     public void onSpawn();
 }
 
-public class Weapon {
+public class sub implements Weapon {
 
     // Properties common to all types of weapons
     private double damagePerShot;
-    private double projectileTravelSpeed;
     private double splashRadius;
     private int availableAmmo;
     private int maxAmmo;
 
-    public Weapon(double dmgPerShot, double projSpeed, double splashR, int availAmmo, int maxAmmo) {
+    public Weapon(double dmgPerShot, double splashR, int availAmmo, int maxAmmo) {
         damagePerShot = dmgPerShot;
-        projectileTravelSpeed = projSpeed;
         splashRadius = splashR;
         availableAmmo = availAmmo;
     }
@@ -35,6 +33,7 @@ public class Weapon {
     public void onSpawn() {
         // need a way to communicate to Map/Environment class
         // that some set of points on map are occupied by weapon
+        maxAmmo = 1000; // placeholder
     }
 
     // Want to decrement by 1 every time probably?
