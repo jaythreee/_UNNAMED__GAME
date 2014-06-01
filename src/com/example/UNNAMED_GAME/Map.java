@@ -106,6 +106,7 @@ public class Map
         for (int i = 0; i < grid.length; i++)
           grid[i] = newMap[i].clone();
 
+
         return true;
     }
 
